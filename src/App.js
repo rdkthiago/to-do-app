@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import TaskList from './components/TaskList';
+import TaskForm from './components/TaskForm';
+import GithubSearch from './components/GithubSearch';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
+  const [tasksUpdated, setTasksUpdated] = React.useState(false);
+
+  const handleTaskAdded = () => {
+    setTasksUpdated(!tasksUpdated);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Gerenciador de Tarefas</h1>
+      <TaskForm onTaskAdded={handleTaskAdded} />
+      <TaskList key={tasksUpdated} />
+      <Router>
+        <Routes>
+          <Route path="/github-search" element={<GithubSearch/>}/>
+        </Routes>
+      </Router>
     </div>
+    
   );
 }
 
 export default App;
+

@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Aplicação Front-end React: Lista de Tarefas e Busca no GitHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é o front-end de uma aplicação desenvolvida em React que permite o gerenciamento de uma lista de tarefas e inclui uma funcionalidade extra para buscar repositórios públicos de um usuário no GitHub utilizando a API pública do GitHub.
 
-## Available Scripts
+## Tecnologias Utilizadas
 
-In the project directory, you can run:
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Material-UI**: Biblioteca de componentes para estilização do front-end.
+- **Axios**: Biblioteca para fazer requisições HTTP.
+- **React Router**: Biblioteca para navegação entre páginas no React.
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Parte 1: Lista de Tarefas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Adicionar Tarefa**: Formulário para adicionar uma nova tarefa.
+- **Listar Tarefas**: Exibe a lista de tarefas, permitindo marcar como completa ou incompleta.
+- **Deletar Tarefa**: Botão para remover uma tarefa da lista.
+- **Atualizar Status**: Permite alternar o status de uma tarefa entre completa e incompleta.
 
-### `npm test`
+### Parte 2: Busca de Repositórios no GitHub
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Campo de Busca**: Permite inserir o nome de um usuário do GitHub.
+- **Listagem de Repositórios**: Exibe os repositórios públicos do usuário informado.
 
-### `npm run build`
+## Pré-requisitos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js e npm instalados.
+- Back-end da aplicação deve estar configurado e em execução (verifique o README do back-end para instruções).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Instalação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone o repositório:
 
-### `npm run eject`
+```bash
+git clone 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Instale as dependências:
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#Inicie o servidor de desenvolvimento:
+npm start
+A aplicação estará disponível em http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Configuração da API
+A URL da API back-end deve ser configurada no arquivo src/services/api.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+import axios from 'axios';
 
-## Learn More
+const api = axios.create({
+  baseURL: 'http://localhost:8000/api', // Altere para a URL da sua API
+});
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default api;
