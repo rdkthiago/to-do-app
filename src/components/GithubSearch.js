@@ -26,7 +26,7 @@ function GithubSearch() {
           value={githubUsername}
           onChange={handleUsernameChange}
         />
-        <Button variant="contained" onClick={fetchGithubRepos} style={{ marginLeft: "1em" }}>
+        <Button variant="contained" onClick={fetchGithubRepos} style={{ marginLeft: "1em", marginTop: "1em" }}>
           Pesquisar Repositórios
         </Button>
         {repositories.length > 0 && (
