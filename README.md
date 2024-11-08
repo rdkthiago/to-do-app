@@ -33,7 +33,7 @@ Este é o front-end de uma aplicação desenvolvida em React que permite o geren
 1. Clone o repositório:
 
 ```bash
-git clone 
+git clone https://github.com/rdkthiago/to-do-app.git
 
 ## Instale as dependências:
 npm install
